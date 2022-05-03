@@ -1,21 +1,28 @@
-var json = [
+const json = [
     {
         "question": "메롱",
         "answer": "메롱이다멍!"
-        }
-    ];
+    }
+];
 
 
-var question = "";
-var answer = "";
-var key = 0;
+let question = "";
+let answer = "";
+let key = 0;
+
+const input = document.getElementById('console');
+input.addEventListener('keyup', event => {
+    if (event.key === 'Enter') {
+        checkText();
+    }
+});
 
 function checkText() {
-    var value = document.getElementById("console").value;
-    var reply = document.getElementById("dogConsole");
-    var back = document.getElementById("back");
-    var reset = document.getElementById("console").value = null;
-    var audio = new Audio('mung.mp3');
+    const value = document.getElementById("console").value;
+    const reply = document.getElementById("dogConsole");
+    const back = document.getElementById("back");
+    const reset = document.getElementById("console").value = null;
+    const audio = new Audio('mung.mp3');
     audio.play();
 
     if (value == 0) {
@@ -24,7 +31,6 @@ function checkText() {
             reply.innerHTML = "할 말을 적어달라멍!";
         }, 1000);
     } else {
-        console.log(value);
         reset;
         reply.innerHTML = ".....";
         if (value.includes("불꺼") || value.includes("불끄")) {
@@ -72,7 +78,7 @@ function checkText() {
             return a[Math.floor(Math.random() * a.length)];
         }
 
-        var hot = new Array('헥헥 너무 덥다멍!', '바다에 퐁당 빠지고 싶은 날씨다 멍!', '에어컨 발명가에게 감사한 나날들이다멍!', '수영하고 싶다 멍!');
+        const hot = new Array('헥헥 너무 덥다멍!', '바다에 퐁당 빠지고 싶은 날씨다 멍!', '에어컨 발명가에게 감사한 나날들이다멍!', '수영하고 싶다 멍!');
 
 
         if (value.includes("더워") || value.includes("덥다") || value.includes("덥지") || value.includes("더운")) {
@@ -82,9 +88,9 @@ function checkText() {
             return;
         }
 
-        var now = new Date;
-        var nowTime = now.getHours() + '시 ' + now.getMinutes() + '분';
-        var time = new Array(nowTime + '이다멍!', '섹시~💋', '접시~~😉', '택시~🚖', '낚시~🐟');
+        const now = new Date;
+        const nowTime = now.getHours() + '시 ' + now.getMinutes() + '분';
+        const time = new Array(nowTime + '이다멍!', '섹시~💋', '접시~~😉', '택시~🚖', '낚시~🐟');
         if (value.includes("몇 시") || value.includes("몇시") || value.includes("몇시야")) {
             setTimeout(function () {
                 reply.innerHTML = randomItem(time);
@@ -113,13 +119,13 @@ function checkText() {
             answer = value; //전역변수 answer값에 사용자의 입력을 저장
             json.push({
                 question: `${question}`,
-                answer: `${answer}`
+                answer: `${answer}멍!`
             }); //json이라는 데이터에 값을 추가하는 push함수
             key = 0; //키 값 0으로 초기화
             return;
         }
 
-        var i = 0;
+        let i = 0;
         for (i = 0; i < json.length; i++) {
             if (value == json[i].question) {
                 setTimeout(function () {
@@ -137,18 +143,4 @@ function checkText() {
         key = 1;
         return;
     }
-}
-
-
-
-
-
-function mouse() {
-    var button = document.getElementById("button");
-    button.classList.add('buttonHover');
-}
-
-function mouseout() {
-    var button = document.getElementById("button");
-    button.classList.remove('buttonHover');
 }

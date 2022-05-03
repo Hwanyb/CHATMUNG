@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -7,28 +7,29 @@
 	<meta name="author" content="Your Name">
 	<meta name="description" content="Example description">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="icon" type="image/x-icon" href=""/>
 </head>
 
 <body>
-	<header></header>
-	<main id="back">
-	    <div class="layout">
-	        <div class="dogSays">
-	            <p class="dogText" id="dogConsole">Welcome to 챗멍!</p>
-	        </div>
-	        <div class="dog"></div>
-            <div class="inputLayout">
-                <input type="text" id="console" class="inputStyle">
-            </div>
-            <div id="button" class="button" onclick="checkText()" onmouseover="mouse()" onmouseout="mouseout()">
-                말걸기
-            </div>
-	    </div>
-	</main>
-	<footer></footer>
+	<div id="back">
+		<div class="layout">
+			<div class="dogSays">
+				<p class="dogText" id="dogConsole">Welcome to 챗멍!</p>
+			</div>
+			<div class="dog"></div>
+			<div class="inputLayout">
+				<input type="text" id="console" class="inputStyle" />
+			</div>
+			<div id="button" class="button" onclick="checkText()">
+				말걸기
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="js/chat.js"></script>
 </body>
 
 </html>
+!
